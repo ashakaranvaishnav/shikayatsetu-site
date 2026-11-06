@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShikayatSetu.in: Find the official government complaint portal</title>
+<meta name="description" content="ShikayatSetu.in is an independent directory that helps you find the official Indian government complaint portal for your problem.">
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#fbf8f3;--card:#fff;--ink:#1c1917;--muted:#57534e;--line:#e7e0d6;--accent:#c2410c;--accent-d:#9a3412;--note:#fff4d6;--focus:#1d4ed8}
+@media (prefers-color-scheme:dark){:root{--bg:#171412;--card:#211d1a;--ink:#f5efe8;--muted:#b8aea3;--line:#3a332d;--accent:#fb923c;--accent-d:#fdba74;--note:#3a2f12;--focus:#93c5fd}}
+*{box-sizing:border-box}
+html{font-size:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.notice{background:var(--note);text-align:center;padding:8px 16px;font-size:.9rem}
+header,main,footer{max-width:1080px;margin:0 auto;padding:0 20px}
+header{display:flex;align-items:baseline;gap:12px;padding-top:20px;padding-bottom:8px;flex-wrap:wrap}
+.logo{font-size:1.5rem;font-weight:800;letter-spacing:-.02em}
+.logo span{color:var(--accent)}
+.tag{color:var(--muted);font-size:.95rem}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+nav{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px 18px}
+nav a{color:var(--ink);text-decoration:none;padding:6px 2px;border-bottom:2px solid transparent}
+nav a:hover{border-bottom-color:var(--accent)}
+#hotlines,#categories,#popular,#report,#about{scroll-margin-top:16px}
+.tools{display:flex;gap:6px;width:100%;justify-content:flex-end}
+.reportbtn{font-size:.85rem;padding:5px 12px;border-radius:8px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;margin-right:auto}
+.hot{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.hot a{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);text-decoration:none}
+.hot a:hover{border-color:var(--accent)}
+.hot strong{display:block;font-size:1.6rem;color:var(--accent);letter-spacing:.02em}
+.hot small{color:var(--muted)}
+.tools button{font:inherit;font-size:.85rem;padding:4px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer}
+.tools button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);font-weight:700}
+body.hc{--bg:#fff;--card:#fff;--ink:#000;--muted:#1a1a1a;--line:#000;--accent:#7c2d12;--accent-d:#431407;--note:#ffe9a8}
+.panel{margin:40px 0 0;padding:20px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.panel h2{margin:0 0 8px}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.1;letter-spacing:-.03em;margin:28px 0 12px;max-width:16ch}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 20px}
+.search{display:flex;gap:8px;max-width:640px}
+.search input{flex:1;min-width:0;font:inherit;padding:14px 16px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+.search button{font:inherit;font-weight:700;padding:0 20px;border:0;border-radius:10px;background:var(--accent);color:#fff;cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.chip{font:inherit;font-size:.9rem;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
+.chip:hover,.chip[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+h2{font-size:1.4rem;margin:40px 0 4px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 16px}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.cat{text-align:left;font:inherit;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);cursor:pointer}
+.cat strong{display:block}
+.cat small{color:var(--muted)}
+.cat[aria-pressed="true"]{border:2px solid var(--accent)}
+.results{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.svc{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:16px;display:flex;flex-direction:column;gap:6px}
+.svc h3{margin:0;font-size:1.1rem}
+.meta{color:var(--muted);font-size:.88rem}
+.badge{display:inline-block;font-size:.8rem;padding:2px 8px;border-radius:6px;border:1px solid var(--line);margin-right:6px}
+.svc p{margin:4px 0;flex:1}
+.domain{font-family:ui-monospace,Consolas,monospace;font-size:.85rem;color:var(--muted)}
+.go{display:inline-block;margin-top:8px;padding:10px 14px;border-radius:8px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;text-align:center}
+.go:hover{background:var(--accent-d)}
+.empty{padding:24px;border:1px dashed var(--line);border-radius:10px;color:var(--muted)}
+.clear{font:inherit;background:none;border:0;color:var(--accent);text-decoration:underline;cursor:pointer;padding:0}
+.disc{margin:40px 0 0;padding:16px 20px;background:var(--note);border-radius:10px}
+.disc h2{margin:0 0 6px;font-size:1.1rem}
+footer{padding-top:28px;padding-bottom:40px;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="notice">ShikayatSetu.in is an independent directory. It is not a government website.</div>
+<header id="top">
+  <div class="logo">Shikayat<span>Setu</span>.in</div>
+  <div class="tag">One place to find official government complaint portals</div>
+  <nav aria-label="Main">
+    <a href="#top">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#popular">Popular</a>
+    <a href="#report">Report a broken link</a>
+    <a href="#about">About and disclaimer</a>
+  </nav>
+  <div class="tools" role="group" aria-label="Display options">
+    <a class="reportbtn" href="#report">Report link</a>
+    <button type="button" id="fontDown" aria-label="Smaller text">A-</button>
+    <button type="button" id="fontUp" aria-label="Larger text">A+</button>
+    <button type="button" id="contrast" aria-pressed="false">High contrast</button>
+  </div>
+</header>
+<main>
+  <h1>Find the right official complaint portal</h1>
+  <p class="lead">Search your problem or pick a category. We send you to the official government website, where you file the complaint yourself.</p>
+  <form class="search" id="searchForm" role="search">
+    <label for="q" hidden>Search complaint services</label>
+    <input id="q" type="search" placeholder="Try: upi fraud, passport delay, train refund" autocomplete="off">
+    <button type="submit">Search</button>
+  </form>
+  <div class="chips" id="chips"></div>
+
+  <h2 id="hotlines">Helpline numbers</h2>
+  <p class="sub">National numbers you can call. Tap a number on your phone to dial.</p>
+  <div class="hot" id="hotList"></div>
+
+  <h2 id="categories">Browse by category</h2>
+  <p class="sub" id="catSub">Choose a category to see its complaint portals.</p>
+  <div class="cats" id="cats"></div>
+
+  <h2 id="popular">Popular portals</h2>
+  <p class="sub">Portals people often need. We chose these ourselves; this is not based on usage statistics.</p>
+  <div class="results" id="popularList"></div>
+
+  <h2 id="resTitle">Complaint portals</h2>
+  <p class="sub" id="resCount" aria-live="polite"></p>
+  <div class="results" id="results"></div>
+
+  <section class="panel" id="report" aria-labelledby="rh">
+    <h2 id="rh">Report a broken or outdated link</h2>
+    <p>If a button opens an error page, a wrong website or an outdated service, tell us the portal name and the problem. We will check it against the official source.</p>
+    <p id="reportContact">Reporting option coming soon.</p>
+  </section>
+
+  <section class="disc" id="about" aria-labelledby="dh">
+    <h2 id="dh">About and disclaimer</h2>
+    <p>ShikayatSetu.in is an independent directory that helps people find the official government website for their complaint. It is not affiliated with the Government of India or any state government. We do not collect, file or track complaints, and we never ask for OTPs, passwords or fees. Always check that the address in your browser matches the official website shown on the card.</p>
+  </section>
+</main>
+<footer>&copy; ShikayatSetu.in. Independent civic directory. Each card shows the date its official address was last confirmed against government sources. Websites change, so always check the address in your browser.</footer>
+
+<script>
+// ShikayatSetu.in: starter data. verified_on is empty until each link is checked against an official source.
+window.CATEGORIES = [
+  { slug: "cybercrime", name: "Cybercrime and online fraud", desc: "Online scams, financial fraud, phishing, social media abuse" },
+  { slug: "police", name: "Police and FIR services", desc: "e-FIR, missing person, lost documents, police clearance" },
+  { slug: "aadhaar-pan", name: "Aadhaar and PAN", desc: "Aadhaar complaints, name mismatch, PAN grievance" },
+  { slug: "banking", name: "Banking and finance", desc: "Bank, UPI, insurance, securities and pension complaints" },
+  { slug: "consumer", name: "Consumer rights", desc: "E-commerce refunds, defective products, consumer courts" },
+  { slug: "electricity", name: "Electricity and power", desc: "Power cuts, billing disputes, meter problems" },
+  { slug: "railways", name: "Railways", desc: "Cleanliness, catering, security, refunds on trains" },
+  { slug: "transport", name: "Transport and RTO", desc: "Driving licence, RC, e-challan, FASTag, flights" },
+  { slug: "passport", name: "Passport and visa", desc: "Passport delays, police verification, overseas help" },
+  { slug: "municipal", name: "Municipal and local body", desc: "Garbage, potholes, street lights, water supply" },
+  { slug: "telecom", name: "Telecom and internet", desc: "Spam calls, SIM issues, lost phone, broadband" },
+  { slug: "schemes", name: "Government schemes", desc: "CPGRAMS, pensions, ration, farmer and health schemes" },
+  { slug: "other", name: "Other public services", desc: "EPFO, income tax, GST, post office, commissions" }
+];
+
+window.SERVICES = [
+  { popular: true, name: "National Cyber Crime Reporting Portal", category: "cybercrime", department: "Ministry of Home Affairs", level: "Central government", scope: "All India",
+    desc: "Report online financial fraud, phishing, social media abuse and other cyber crimes.",
+    url: "https://cybercrime.gov.in/", domain: "cybercrime.gov.in", tags: ["scam", "upi fraud", "otp fraud", "hacking"], verified_on: "2026-11-05" },
+  { popular: true, name: "Sanchar Saathi", category: "telecom", department: "Department of Telecommunications", level: "Central government", scope: "All India",
+    desc: "Check mobile connections in your name, report lost phones and report suspected fraud calls and messages.",
+    url: "https://sancharsaathi.gov.in/", domain: "sancharsaathi.gov.in", tags: ["spam call", "lost phone", "sim", "fraud sms"], verified_on: "2026-11-05" },
+  { popular: true, name: "National Consumer Helpline", category: "consumer", department: "Department of Consumer Affairs", level: "Central government", scope: "All India",
+    desc: "Register complaints about products, services, refunds and e-commerce.",
+    url: "https://consumerhelpline.gov.in/", domain: "consumerhelpline.gov.in", tags: ["refund", "ecommerce", "defective product"], verified_on: "2026-11-05" },
+  { popular: true, name: "RailMadad", category: "railways", department: "Indian Railways", level: "Central government", scope: "All India",
+    desc: "Raise complaints and suggestions about train journeys, stations, cleanliness, catering and security.",
+    url: "https://railmadad.indianrailways.gov.in/", domain: "railmadad.indianrailways.gov.in", tags: ["train", "irctc", "cleanliness", "catering"], verified_on: "2026-11-05" },
+  { popular: true, name: "RBI Complaint Management System", category: "banking", department: "Reserve Bank of India", level: "Regulator", scope: "All India",
+    desc: "Escalate complaints about banks, NBFCs and payment services after approaching the bank first.",
+    url: "https://cms.rbi.org.in/", domain: "cms.rbi.org.in", tags: ["bank", "ombudsman", "upi", "loan"], verified_on: "2026-11-05" },
+  { name: "SEBI SCORES", category: "banking", department: "Securities and Exchange Board of India", level: "Regulator", scope: "All India",
+    desc: "Complaints against listed companies, brokers, mutual funds and other market intermediaries.",
+    url: "https://scores.sebi.gov.in/", domain: "scores.sebi.gov.in", tags: ["stock", "broker", "demat", "mutual fund"], verified_on: "2026-11-05" },
+  { popular: true, name: "CPGRAMS", category: "schemes", department: "Dept. of Administrative Reforms and Public Grievances", level: "Central government", scope: "All India",
+    desc: "Central portal for grievances against central ministries and departments, and many state departments.",
+    url: "https://pgportal.gov.in/", domain: "pgportal.gov.in", tags: ["grievance", "pension", "ministry"], verified_on: "2026-11-05" },
+  { popular: true, name: "Passport Seva", category: "passport", department: "Ministry of External Affairs", level: "Central government", scope: "All India",
+    desc: "Passport services and grievance registration for delays, verification and dispatch issues.",
+    url: "https://www.passportindia.gov.in/", domain: "passportindia.gov.in", tags: ["passport", "police verification"], verified_on: "2026-11-05" },
+  { popular: true, name: "Parivahan Sewa", category: "transport", department: "Ministry of Road Transport and Highways", level: "Central government", scope: "All India",
+    desc: "Driving licence, vehicle registration and RTO services, with grievance options.",
+    url: "https://parivahan.gov.in/", domain: "parivahan.gov.in", tags: ["rto", "driving licence", "rc", "challan"], verified_on: "2026-11-05" },
+  { name: "EPFO Grievance Portal (EPFiGMS)", category: "other", department: "Employees' Provident Fund Organisation", level: "Central government", scope: "All India",
+    desc: "Grievances about provident fund withdrawals, KYC, pension and UAN problems.",
+    url: "https://epfigms.gov.in/", domain: "epfigms.gov.in", tags: ["pf", "epf", "uan", "pension"], verified_on: "2026-11-05" }
+];
+
+// Helpline numbers. Each was checked on the date below against government sources. Edit here to change the row on the site.
+window.HOTLINES = [
+  { label: "Cyber crime and online fraud", number: "1930", note: "National Cyber Crime Helpline", verified_on: "2026-11-05" },
+  { label: "Consumer complaints", number: "1915", note: "National Consumer Helpline, 8 AM to 8 PM", verified_on: "2026-11-05" },
+  { label: "Railway help and complaints", number: "139", note: "RailMadad helpline", verified_on: "2026-11-05" },
+  { label: "Emergency (police, fire, ambulance)", number: "112", note: "National emergency number", verified_on: "2026-11-05" }
+];
+
+</script>
+<script>
+(function(){
+  var cats=window.CATEGORIES, svcs=window.SERVICES, activeCat="", query="";
+  var $=function(id){return document.getElementById(id)};
+  var quick=["Cyber scam","UPI fraud","Passport delay","Train refund","PF claim","Spam calls"];
+
+  function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
+
+  function renderChips(){
+    var box=$("chips");box.innerHTML="";
+    quick.forEach(function(t){
+      var b=el("button","chip",t);b.type="button";
+      b.addEventListener("click",function(){$("q").value=t;query=t;activeCat="";render()});
+      box.appendChild(b);
+    });
+  }
+
+  function renderCats(){
+    var box=$("cats");box.innerHTML="";
+    cats.forEach(function(c){
+      var b=el("button","cat");b.type="button";
+      b.setAttribute("aria-pressed",String(activeCat===c.slug));
+      b.appendChild(el("strong","",c.name));b.appendChild(el("small","",c.desc));
+      b.addEventListener("click",function(){activeCat=(activeCat===c.slug?"":c.slug);render()});
+      box.appendChild(b);
+    });
+  }
+
+  function matches(s){
+    if(activeCat&&s.category!==activeCat)return false;
+    if(!query)return true;
+    var hay=(s.name+" "+s.department+" "+s.desc+" "+s.domain+" "+s.tags.join(" ")).toLowerCase();
+    return query.toLowerCase().split(/\s+/).every(function(w){return hay.indexOf(w)>-1});
+  }
+
+  function renderResults(){
+    var box=$("results");box.innerHTML="";
+    var list=svcs.filter(matches);
+    var catName=cats.filter(function(c){return c.slug===activeCat})[0];
+    $("resTitle").textContent=catName?catName.name:(query?"Search results":"Complaint portals");
+    $("resCount").textContent=list.length+(list.length===1?" portal":" portals")+" listed";
+    if(!list.length){
+      var e=el("div","empty","No portals match yet. Try a simpler word, or choose a category. ");
+      var b=el("button","clear","Clear search and category");b.type="button";
+      b.addEventListener("click",function(){query="";activeCat="";$("q").value="";render()});
+      e.appendChild(b);box.appendChild(e);return;
+    }
+    fillCards(box,list);
+  }
+
+  function fillCards(box,list){
+    list.forEach(function(s){
+      var c=el("article","svc");
+      c.appendChild(el("h3","",s.name));
+      var m=el("div","meta");m.appendChild(el("span","badge",s.level));m.appendChild(document.createTextNode(s.department+" ("+s.scope+")"));
+      c.appendChild(m);
+      c.appendChild(el("p","",s.desc));
+      c.appendChild(el("div","domain","Official site: "+s.domain));
+      c.appendChild(el("div","meta",s.verified_on?("Official address confirmed on "+s.verified_on):"Official address check pending"));
+      var a=el("a","go","Open official portal");
+      a.href=s.url;a.target="_blank";a.rel="noopener noreferrer";
+      a.setAttribute("aria-label","Open official portal for "+s.name+" in a new tab");
+      c.appendChild(a);box.appendChild(c);
+    });
+  }
+
+  function render(){renderCats();renderResults()}
+  function renderHot(){var b=$("hotList");b.innerHTML="";(window.HOTLINES||[]).forEach(function(x){var a=el("a");a.href="tel:"+x.number;a.setAttribute("aria-label","Call "+x.number+": "+x.label);a.appendChild(el("span","",x.label));a.appendChild(el("strong","",x.number));a.appendChild(el("small","",x.note));b.appendChild(a)})}
+  function renderPopular(){var b=$("popularList");b.innerHTML="";fillCards(b,svcs.filter(function(s){return s.popular}))}
+  var fs=100;
+  $("fontUp").addEventListener("click",function(){fs=Math.min(140,fs+10);document.documentElement.style.fontSize=fs+"%"});
+  $("fontDown").addEventListener("click",function(){fs=Math.max(90,fs-10);document.documentElement.style.fontSize=fs+"%"});
+  $("contrast").addEventListener("click",function(){var on=document.body.classList.toggle("hc");this.setAttribute("aria-pressed",String(on))});
+
+  $("searchForm").addEventListener("submit",function(ev){ev.preventDefault();query=$("q").value.trim();activeCat="";render()});
+  // Put your contact email between the quotes to show a report link. Leave empty to show "coming soon".
+  var REPORT_EMAIL="";
+  if(REPORT_EMAIL){
+    var rc=$("reportContact");rc.textContent="Email us at ";
+    var ma=el("a","",REPORT_EMAIL);ma.href="mailto:"+REPORT_EMAIL+"?subject="+encodeURIComponent("Broken link report");
+    rc.appendChild(ma);
+  }
+  renderChips();render();renderPopular();renderHot();
+})();
+</script>
+</body>
+</html>
