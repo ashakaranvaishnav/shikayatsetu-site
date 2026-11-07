@@ -25,7 +25,7 @@ html{scroll-behavior:smooth}
 nav{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px 18px}
 nav a{color:var(--ink);text-decoration:none;padding:6px 2px;border-bottom:2px solid transparent}
 nav a:hover{border-bottom-color:var(--accent)}
-#hotlines,#categories,#popular,#guide,#report,#about{scroll-margin-top:16px}
+#hotlines,#categories,#popular,#guide,#report,#about,#resTitle{scroll-margin-top:16px}
 .tools{display:flex;gap:6px;width:100%;justify-content:flex-end}
 .reportbtn{font-size:.85rem;padding:5px 12px;border-radius:8px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;margin-right:auto}
 .hot{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
@@ -117,6 +117,14 @@ body.hc .hotc{background:#fff;border-color:#000;--tone:#000}
 .safe h3{margin:0 0 8px;font-size:1.05rem}
 .safe ul{margin:0;padding-left:20px}
 .safe li{margin:6px 0}
+.back{display:inline-block;margin:8px 0 4px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--accent);text-decoration:underline}
+.cvhead{display:flex;gap:16px;align-items:flex-start;margin:8px 0 18px}
+.cvicon{flex:none;width:52px;height:52px;border-radius:12px;background:var(--note);display:grid;place-items:center;font-size:1.6rem}
+.cvhead h1{font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 4px;max-width:none}
+.cvhead .lead{margin:0 0 4px}
+.cvhead .sub{margin:0}
+.cat .ci{font-size:1.3rem;display:block;margin-bottom:4px}
 </style>
 </head>
 <body>
@@ -139,6 +147,7 @@ body.hc .hotc{background:#fff;border-color:#000;--tone:#000}
   </div>
 </header>
 <main>
+  <div id="homeView">
   <div class="hero"><div>
   <h1>Find the right official complaint portal</h1>
   <p class="lead">Search your problem or pick a category. We send you to the official government website, where you file the complaint yourself.</p>
@@ -168,13 +177,16 @@ body.hc .hotc{background:#fff;border-color:#000;--tone:#000}
   <p class="sub" id="catSub">Choose a category to see its complaint portals.</p>
   <div class="cats" id="cats"></div>
 
+  <div id="resBox" hidden>
+  <h2 id="resTitle">Complaint portals</h2>
+  <p class="sub" id="resCount" aria-live="polite"></p>
+  <div class="results" id="results"></div>
+  </div>
+
   <h2 id="popular">Popular portals</h2>
   <p class="sub">Portals people often need. We chose these ourselves; this is not based on usage statistics.</p>
   <div class="results" id="popularList"></div>
 
-  <h2 id="resTitle">Complaint portals</h2>
-  <p class="sub" id="resCount" aria-live="polite"></p>
-  <div class="results" id="results"></div>
 
   <h2 id="guide">How to file a complaint, step by step</h2>
   <p class="sub">Follow these simple steps. आसान स्टेप्स में शिकायत कैसे करें।</p>
@@ -202,6 +214,34 @@ body.hc .hotc{background:#fff;border-color:#000;--tone:#000}
     <button type="button" class="cta" id="openReport">Submit a report</button>
   </section>
 
+
+  <section class="disc" id="about" aria-labelledby="dh">
+    <h2 id="dh">About and disclaimer</h2>
+    <p>ShikayatSetu.in is an independent directory, run by Ashkaran Vaishnav, that helps people find the official government website for their complaint. It is not affiliated with the Government of India or any state government. We do not collect, file or track complaints, and we never ask for OTPs, passwords or fees. Always check that the address in your browser matches the official website shown on the card.</p>
+  </section>
+  </div>
+
+  <section id="catView" hidden>
+    <p><a class="back" href="#top">&larr; Back to home</a></p>
+    <div class="cvhead">
+      <span class="cvicon" id="cvIcon" aria-hidden="true"></span>
+      <div>
+        <h1 id="cvTitle" tabindex="-1"></h1>
+        <p class="lead" id="cvDesc"></p>
+        <p class="sub" id="cvCount" aria-live="polite"></p>
+      </div>
+    </div>
+    <form class="search" id="cvForm" role="search">
+      <label for="cq" hidden>Search in this category</label>
+      <input id="cq" type="search" placeholder="Search in this category" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <div class="results" id="cvResults" style="margin-top:20px"></div>
+    <section class="disc" aria-label="Disclaimer">
+      <p>ShikayatSetu.in is an independent directory and is not a government website. Always check that the address in your browser matches the official website shown on the card, and never share OTPs, passwords or card details.</p>
+    </section>
+  </section>
+</main>
   <dialog id="reportDialog" aria-labelledby="dlgTitle">
     <form id="reportForm">
       <h2 id="dlgTitle">Report a broken or incorrect link</h2>
@@ -225,12 +265,6 @@ body.hc .hotc{background:#fff;border-color:#000;--tone:#000}
       <div class="dbtn"><button type="button" id="rCancel">Cancel</button><button type="submit" class="cta" id="rSubmit">Submit report</button></div>
     </form>
   </dialog>
-
-  <section class="disc" id="about" aria-labelledby="dh">
-    <h2 id="dh">About and disclaimer</h2>
-    <p>ShikayatSetu.in is an independent directory, run by Ashkaran Vaishnav, that helps people find the official government website for their complaint. It is not affiliated with the Government of India or any state government. We do not collect, file or track complaints, and we never ask for OTPs, passwords or fees. Always check that the address in your browser matches the official website shown on the card.</p>
-  </section>
-</main>
 <footer>&copy; 2026 ShikayatSetu.in. An independent project by Ashkaran Vaishnav. Not a government website. Each card shows the date its official address was last confirmed against government sources. Websites change, so always check the address in your browser.</footer>
 
 <script>
@@ -282,6 +316,38 @@ window.SERVICES = [
   { name: "EPFO Grievance Portal (EPFiGMS)", category: "other", department: "Employees' Provident Fund Organisation", level: "Central government", scope: "All India",
     desc: "Grievances about provident fund withdrawals, KYC, pension and UAN problems.",
     url: "https://epfigms.gov.in/", domain: "epfigms.gov.in", tags: ["pf", "epf", "uan", "pension"], verified_on: "2026-11-05" }
+  ,
+  { name: "Chakshu: report suspected fraud communication", category: "cybercrime", department: "Department of Telecommunications (Sanchar Saathi)", level: "Central government", scope: "All India",
+    desc: "Report suspicious calls, SMS or WhatsApp messages that look like fraud. This is for reporting suspected fraud, not for fraud where you have already lost money. If money is lost, use the National Cyber Crime Reporting Portal or call 1930.",
+    url: "https://sancharsaathi.gov.in/sfc/", domain: "sancharsaathi.gov.in", tags: ["spam call", "fraud sms", "whatsapp scam", "fake call", "kyc scam"], verified_on: "2026-11-07" },
+  { name: "CERT-In (Indian Computer Emergency Response Team)", category: "cybercrime", department: "Ministry of Electronics and IT", level: "Central government", scope: "All India",
+    desc: "National agency for cyber security incidents such as hacking, ransomware and data breaches. Incident reporting is mainly meant for organisations and system administrators. If you are an individual victim of cyber crime, use the National Cyber Crime Reporting Portal.",
+    url: "https://www.cert-in.org.in/", domain: "cert-in.org.in", tags: ["hacking", "ransomware", "data breach", "malware", "security incident"], verified_on: "2026-11-07" },
+  { name: "Indian Cyber Crime Coordination Centre (I4C)", category: "cybercrime", department: "Ministry of Home Affairs", level: "Central government (information only)", scope: "All India",
+    desc: "Information about I4C, the Ministry of Home Affairs body that coordinates action against cyber crime. You cannot file a complaint on this page. Use the National Cyber Crime Reporting Portal to report a cyber crime.",
+    url: "https://www.mha.gov.in/en/divisionofmha/cyber-and-information-security-cis-division", domain: "mha.gov.in", tags: ["cyber police", "investigation", "cyber crime unit", "i4c"], verified_on: "2026-11-07" },
+  { name: "Grievance Appellate Committee (appeals under IT Rules)", category: "cybercrime", department: "Grievance Appellate Committees, Government of India", level: "Central government", scope: "All India",
+    desc: "If a social media platform ignores or rejects your complaint about content such as a deepfake, impersonation or fake account, you can appeal here. First complain to the platform's grievance officer. To report a crime, use the National Cyber Crime Reporting Portal.",
+    url: "https://www.gac.gov.in/", domain: "gac.gov.in", tags: ["deepfake", "impersonation", "social media", "fake account", "appeal", "content removal"], verified_on: "2026-11-07" }
+  ,
+  { name: "Delhi Police: citizen services", category: "police", department: "Delhi Police", level: "Union Territory police", scope: "Delhi",
+    desc: "Delhi Police citizen services. The site lists lost report, motor vehicle theft e-FIR, missing person report, complaint lodging, view FIR and police clearance certificate.",
+    url: "https://delhipolice.gov.in/", domain: "delhipolice.gov.in", tags: ["efir", "fir", "lost report", "mobile theft", "police clearance", "delhi police", "missing person"], verified_on: "2026-11-07" },
+  { name: "Uttar Pradesh Police: citizen services", category: "police", department: "Uttar Pradesh Police", level: "State government", scope: "Uttar Pradesh",
+    desc: "UP Police website with citizen services such as complaint registration, e-FIR (for certain cases) and view FIR, character verification and tenant verification. The UPCOP app offers many of these too.",
+    url: "https://uppolice.gov.in/", domain: "uppolice.gov.in", tags: ["efir", "fir", "upcop", "lost article", "character certificate", "tenant verification", "uttar pradesh"], verified_on: "2026-11-07" },
+  { name: "Maharashtra Police: citizen portal", category: "police", department: "Maharashtra Police", level: "State government", scope: "Maharashtra",
+    desc: "Maharashtra Police website. Use its Citizen portal (Citizen's corner) for online complaints and e-FIR in certain cases, and to report cyber crime.",
+    url: "https://www.mahapolice.gov.in/", domain: "mahapolice.gov.in", tags: ["efir", "fir", "complaint", "mumbai", "pune", "maharashtra", "lost article"], verified_on: "2026-11-07" },
+  { name: "Karnataka State Police: citizen services", category: "police", department: "Karnataka State Police", level: "State government", scope: "Karnataka",
+    desc: "Karnataka State Police website with a citizen portal for complaints and e-FIR in certain cases, and the e-Lost report for lost items and documents.",
+    url: "https://ksp.karnataka.gov.in/", domain: "ksp.karnataka.gov.in", tags: ["efir", "fir", "e-lost", "lost report", "bangalore", "bengaluru", "karnataka"], verified_on: "2026-11-07" },
+  { name: "Madhya Pradesh Police: citizen services", category: "police", department: "Madhya Pradesh Police", level: "State government", scope: "Madhya Pradesh",
+    desc: "MP Police website with a citizen portal to lodge complaints, file e-FIR in certain cases and report a lost article. The MPeCOP app is also available.",
+    url: "https://mppolice.gov.in/", domain: "mppolice.gov.in", tags: ["efir", "fir", "complaint", "lost article", "bhopal", "indore", "madhya pradesh", "mp"], verified_on: "2026-11-07" },
+  { name: "Rajasthan Police: citizen services", category: "police", department: "Rajasthan Police", level: "State government", scope: "Rajasthan",
+    desc: "Rajasthan Police website with citizen services including complaint registration, lost article report and view FIR. Login uses the Rajasthan SSO.",
+    url: "https://police.rajasthan.gov.in/", domain: "police.rajasthan.gov.in", tags: ["efir", "fir", "complaint", "lost article", "jaipur", "rajasthan", "jodhpur"], verified_on: "2026-11-07" }
 ];
 
 // Helpline numbers. Each was checked on the date below against government sources. Edit here to change the row on the site.
@@ -295,6 +361,8 @@ window.HOTLINES = [
 </script>
 <script>
 (function(){
+  var ICON={"cybercrime":"\uD83D\uDEE1\uFE0F","police":"\uD83D\uDE93","aadhaar-pan":"\uD83E\uDEAA","banking":"\uD83C\uDFE6","consumer":"\uD83D\uDECD\uFE0F","electricity":"\u26A1","railways":"\uD83D\uDE86","transport":"\uD83D\uDE97","passport":"\uD83D\uDCD8","municipal":"\uD83C\uDFE2","telecom":"\uD83D\uDCF6","schemes":"\uD83C\uDFC5","other":"\u2753"};
+  var HOME_TITLE=document.title;
   var cats=window.CATEGORIES, svcs=window.SERVICES, activeCat="", query="";
   var $=function(id){return document.getElementById(id)};
   var quick=["Cyber scam","UPI fraud","Passport delay","Train refund","PF claim","Spam calls"];
@@ -314,9 +382,8 @@ window.HOTLINES = [
     var box=$("cats");box.innerHTML="";
     cats.forEach(function(c){
       var b=el("button","cat");b.type="button";
-      b.setAttribute("aria-pressed",String(activeCat===c.slug));
-      b.appendChild(el("strong","",c.name));b.appendChild(el("small","",c.desc));
-      b.addEventListener("click",function(){activeCat=(activeCat===c.slug?"":c.slug);render()});
+            b.appendChild(el("span","ci",ICON[c.slug]||""));b.appendChild(el("strong","",c.name));b.appendChild(el("small","",c.desc));
+      b.addEventListener("click",function(){location.hash="category-"+c.slug});
       box.appendChild(b);
     });
   }
@@ -425,7 +492,7 @@ window.HOTLINES = [
     });
   }
 
-  function render(){renderCats();renderResults()}
+  function render(){renderCats();renderResults();$("resBox").hidden=!(activeCat||query)}
   var HOT_TONE={"1930":"red","1915":"blue","139":"orange","112":"green"};
   var HOT_ICON={"red": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z\"/><path d=\"M12 8v5M12 16h.01\"/></svg>", "blue": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z\"/></svg>", "orange": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"3\" width=\"14\" height=\"14\" rx=\"3\"/><path d=\"M5 11h14M9 21l2-4M15 21l-2-4M9 14h.01M15 14h.01\"/></svg>", "green": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l10 18H2z\"/><path d=\"M12 10v5M12 18h.01\"/></svg>"};
   function renderHot(){
@@ -506,7 +573,39 @@ window.HOTLINES = [
     window.location.href="mailto:"+REPORT_EMAIL+"?subject="+encodeURIComponent("Link report: "+$("rName").value)+"&body="+encodeURIComponent(body);
     st.textContent="Your email app should open with the report ready. Please press send there. If nothing opens, email us at "+REPORT_EMAIL+".";
   });
-  renderChips();render();renderPopular();renderHot();
+  function renderCatList(){
+    var q=$("cq").value.trim();
+    var saveQ=query;query=q;var list=ranked();query=saveQ;
+    $("cvCount").textContent=list.length+(list.length===1?" portal":" portals")+" listed"+(q?", closest matches first":"");
+    var box=$("cvResults");box.innerHTML="";
+    if(!list.length){
+      var e=el("div","empty",q?"No portal in this category matches your search. Try a simpler word.":"No portals are listed in this category yet. We add a portal only after checking its official address. ");
+      if(!q){var r=el("a","clear","Tell us a portal we should check");r.href="#report";e.appendChild(r)}
+      box.appendChild(e);return;
+    }
+    fillCards(box,list);
+  }
+  function showHome(){$("catView").hidden=true;$("homeView").hidden=false;activeCat="";query="";document.title=HOME_TITLE;render()}
+  function showCategory(slug){
+    var c=cats.filter(function(x){return x.slug===slug})[0];
+    if(!c){showHome();return}
+    activeCat=slug;query="";
+    $("homeView").hidden=true;$("catView").hidden=false;
+    $("cvTitle").textContent=c.name;$("cvDesc").textContent=c.desc;$("cvIcon").textContent=ICON[slug]||"";
+    $("cq").value="";document.title=c.name+" complaint portals - ShikayatSetu.in";
+    renderCatList();window.scrollTo(0,0);$("cvTitle").focus({preventScroll:true});
+  }
+  function route(){
+    var hsh=decodeURIComponent(location.hash.replace(/^#/,""));
+    if(hsh.indexOf("category-")===0){showCategory(hsh.slice(9));return}
+    if(!$("catView").hidden)showHome();
+    if(!hsh||hsh==="top"){window.scrollTo(0,0);return}
+    var t=document.getElementById(hsh);if(t)t.scrollIntoView();
+  }
+  $("cq").addEventListener("input",renderCatList);
+  $("cvForm").addEventListener("submit",function(ev){ev.preventDefault();renderCatList()});
+  window.addEventListener("hashchange",route);
+  renderChips();render();renderPopular();renderHot();route();
 })();
 </script>
 </body>
