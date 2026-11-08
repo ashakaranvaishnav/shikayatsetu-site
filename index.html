@@ -117,8 +117,10 @@ body.hc .hotc{background:#fff;border-color:#000;--tone:#000}
 .safe h3{margin:0 0 8px;font-size:1.05rem}
 .safe ul{margin:0;padding-left:20px}
 .safe li{margin:6px 0}
-.back{display:inline-block;margin:8px 0 4px;color:var(--muted);text-decoration:none}
-.back:hover{color:var(--accent);text-decoration:underline}
+.backrow{margin:6px 0 10px}
+.back{display:inline-flex;align-items:center;gap:4px;font-size:.88rem;color:var(--muted);text-decoration:none;padding:4px 2px}
+.back:hover{color:var(--accent)}
+.back:hover span{text-decoration:underline}
 .cvhead{display:flex;gap:16px;align-items:flex-start;margin:8px 0 18px}
 .cvicon{flex:none;width:52px;height:52px;border-radius:12px;background:var(--note);display:grid;place-items:center;font-size:1.6rem}
 .cvhead h1{font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 4px;max-width:none}
@@ -222,7 +224,7 @@ body.hc .hotc{background:#fff;border-color:#000;--tone:#000}
   </div>
 
   <section id="catView" hidden>
-    <p><a class="back" href="#top">&larr; Back to home</a></p>
+    <p class="backrow"><a class="back" href="#top"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><span>Back to home</span></a></p>
     <div class="cvhead">
       <span class="cvicon" id="cvIcon" aria-hidden="true"></span>
       <div>
@@ -313,7 +315,7 @@ window.SERVICES = [
   { popular: true, name: "Parivahan Sewa", category: "transport", department: "Ministry of Road Transport and Highways", level: "Central government", scope: "All India",
     desc: "Driving licence, vehicle registration and RTO services, with grievance options.",
     url: "https://parivahan.gov.in/", domain: "parivahan.gov.in", tags: ["rto", "driving licence", "rc", "challan"], verified_on: "2026-11-05" },
-  { name: "EPFO Grievance Portal (EPFiGMS)", category: "other", department: "Employees' Provident Fund Organisation", level: "Central government", scope: "All India",
+  { name: "EPFO Grievance Portal (EPFiGMS)", category: "banking", department: "Employees' Provident Fund Organisation", level: "Central government", scope: "All India",
     desc: "Grievances about provident fund withdrawals, KYC, pension and UAN problems.",
     url: "https://epfigms.gov.in/", domain: "epfigms.gov.in", tags: ["pf", "epf", "uan", "pension"], verified_on: "2026-11-05" }
   ,
@@ -348,6 +350,35 @@ window.SERVICES = [
   { name: "Rajasthan Police: citizen services", category: "police", department: "Rajasthan Police", level: "State government", scope: "Rajasthan",
     desc: "Rajasthan Police website with citizen services including complaint registration, lost article report and view FIR. Login uses the Rajasthan SSO.",
     url: "https://police.rajasthan.gov.in/", domain: "police.rajasthan.gov.in", tags: ["efir", "fir", "complaint", "lost article", "jaipur", "rajasthan", "jodhpur"], verified_on: "2026-11-07" }
+  ,
+  { name: "UIDAI Grievance Redressal", category: "aadhaar-pan", department: "Unique Identification Authority of India", level: "Central government", scope: "All India",
+    desc: "UIDAI's grievance page for Aadhaar enrolment and update problems. You can reach UIDAI by phone, email, chat or its web portal. The toll-free helpline is 1947 and the email is help@uidai.gov.in.",
+    url: "https://uidai.gov.in/contact-support/grievance-redressal.html", domain: "uidai.gov.in", tags: ["aadhaar", "aadhar", "uidai", "enrolment", "update", "biometric", "mismatch", "1947"], verified_on: "2026-11-07" },
+  { name: "Aadhaar: file a complaint (Resident portal)", category: "aadhaar-pan", department: "UIDAI Resident Services", level: "Central government", scope: "All India",
+    desc: "Register a complaint about Aadhaar services on the UIDAI resident portal. You will need details such as your enrolment ID and contact details, and you can check your complaint status with the complaint number.",
+    url: "https://resident.uidai.gov.in/file-complaint", domain: "resident.uidai.gov.in", tags: ["aadhaar", "aadhar", "complaint", "enrolment id", "name correction", "update", "operator"], verified_on: "2026-11-07" },
+  { name: "Protean (earlier NSDL e-Gov): PAN services", category: "aadhaar-pan", department: "Protean eGov Technologies Limited", level: "Authorised by Income Tax Department", scope: "All India",
+    desc: "One of the two agencies authorised by the Income Tax Department for PAN services. Use it for PAN application, correction or reprint, and to raise a complaint or query if you applied through Protean. Many look-alike sites offer PAN services, so check the address carefully.",
+    url: "https://tinpan.proteantech.in/", domain: "tinpan.proteantech.in", tags: ["pan", "nsdl", "protean", "pan correction", "reprint", "pan card", "tin"], verified_on: "2026-11-07" },
+  { name: "UTIITSL: PAN services", category: "aadhaar-pan", department: "UTI Infrastructure Technology and Services Limited", level: "Authorised by Income Tax Department", scope: "All India",
+    desc: "The other agency authorised by the Income Tax Department for PAN services. Use it for PAN application and correction, and to raise a grievance if you applied through UTIITSL. Many look-alike sites offer PAN services, so check the address carefully.",
+    url: "https://www.pan.utiitsl.com/", domain: "pan.utiitsl.com", tags: ["pan", "utiitsl", "uti", "pan correction", "duplicate pan", "pan card"], verified_on: "2026-11-07" },
+  { name: "Income Tax e-Nivaran (grievances)", category: "aadhaar-pan", department: "Income Tax Department", level: "Central government", scope: "All India",
+    desc: "e-Nivaran is the grievance module on the Income Tax e-filing portal. Registered and unregistered users can raise grievances about e-filing, CPC-ITR, the Assessing Officer and CPC-TDS, including PAN related problems.",
+    url: "https://www.incometax.gov.in/", domain: "incometax.gov.in", tags: ["income tax", "e-nivaran", "pan", "refund", "itr", "tds", "grievance"], verified_on: "2026-11-07" },
+  { name: "PAN-Aadhaar linking (Link Aadhaar)", category: "aadhaar-pan", department: "Income Tax Department", level: "Central government", scope: "All India",
+    desc: "Help page for the Link Aadhaar service on the Income Tax e-filing portal. Use Quick Links on the e-filing home page to link PAN and Aadhaar and to view the Link Aadhaar status. It is open to registered and unregistered users.",
+    url: "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/link-aadhaar", domain: "incometax.gov.in", tags: ["pan aadhaar link", "link aadhaar", "inoperative pan", "mismatch", "pan", "aadhaar"], verified_on: "2026-11-07" }
+  ,
+  { name: "IRDAI Bima Bharosa (insurance grievances)", category: "banking", department: "Insurance Regulatory and Development Authority of India", level: "Regulator", scope: "All India",
+    desc: "IRDAI's portal to register and track complaints against life, health, motor and other insurers. IRDAI advises complaining to the insurer first. Helpline: 155255 or 1800 4254 732. Email: complaints@irdai.gov.in.",
+    url: "https://bimabharosa.irdai.gov.in/", domain: "bimabharosa.irdai.gov.in", tags: ["insurance", "claim rejected", "mediclaim", "policy", "life insurance", "health insurance", "motor insurance"], verified_on: "2026-11-07" },
+  { name: "NPS grievances (CRA, then NPS Trust)", category: "banking", department: "Central Recordkeeping Agency (Protean) and NPS Trust", level: "Regulated by PFRDA", scope: "All India",
+    desc: "Register National Pension System grievances with the Central Recordkeeping Agency. If it is not resolved within 30 days, you can escalate to the NPS Trust, and then to the PFRDA Ombudsman. The CRA website has moved to npscra.proteantech.in.",
+    url: "https://www.npscra.proteantech.in/", domain: "npscra.proteantech.in", tags: ["nps", "pension", "pran", "withdrawal", "contribution", "retirement"], verified_on: "2026-11-07" },
+  { name: "NPCI UPI dispute redressal", category: "banking", department: "National Payments Corporation of India", level: "Payments network operator", scope: "All India",
+    desc: "For UPI problems such as a failed payment or money debited, raise the complaint first on your UPI app or with your bank. NPCI's page explains the dispute process and how to escalate if it is not resolved.",
+    url: "https://www.npci.org.in/what-we-do/upi/dispute-redressal-mechanism", domain: "npci.org.in", tags: ["upi", "failed transaction", "money debited", "wrong transfer", "paisa", "payment"], verified_on: "2026-11-07" }
 ];
 
 // Helpline numbers. Each was checked on the date below against government sources. Edit here to change the row on the site.
